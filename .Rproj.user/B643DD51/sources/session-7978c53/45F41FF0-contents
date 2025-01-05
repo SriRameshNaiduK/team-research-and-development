@@ -1,0 +1,512 @@
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+levels(filtered_contingency_df$Involvement) <- c("Entry level", "Mid-Senior level", "Associate", "Director")
+ggplot(filtered_contingency_df, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top Designations",
+x = "Designation",
+y = "Percentage (%)",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+selected_designations <- top_designations$Designation[1:150]
+filtered_data <- subset(data, Designation %in% selected_designations)
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+levels(filtered_contingency_df$Involvement) <- c("Entry level", "Mid-Senior level", "Associate", "Director")
+ggplot(filtered_contingency_df, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top Designations",
+x = "Designation",
+y = "Percentage (%)",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+selected_designations <- top_designations$Designation[1:200]
+filtered_data <- subset(data, Designation %in% selected_designations)
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+levels(filtered_contingency_df$Involvement) <- c("Entry level", "Mid-Senior level", "Associate", "Director")
+ggplot(filtered_contingency_df, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top Designations",
+x = "Designation",
+y = "Percentage (%)",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+selected_designations <- top_designations$Designation[1:190]
+filtered_data <- subset(data, Designation %in% selected_designations)
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+levels(filtered_contingency_df$Involvement) <- c("Entry level", "Mid-Senior level", "Associate", "Director")
+ggplot(filtered_contingency_df, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top Designations",
+x = "Designation",
+y = "Percentage (%)",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+selected_designations <- top_designations$Designation[1:180]
+filtered_data <- subset(data, Designation %in% selected_designations)
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+levels(filtered_contingency_df$Involvement) <- c("Entry level", "Mid-Senior level", "Associate", "Director")
+ggplot(filtered_contingency_df, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top Designations",
+x = "Designation",
+y = "Percentage (%)",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+top_designations <- as.data.frame(table(data$Designation))
+colnames(top_designations) <- c("Designation", "Count")
+top_designations <- top_designations[order(-top_designations$Count), ]
+selected_designations <- top_designations$Designation[1:10]
+filtered_data <- subset(data, Designation %in% selected_designations)
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+levels(filtered_contingency_df$Involvement) <- c("Entry level", "Mid-Senior level", "Associate", "Director")
+ggplot(filtered_contingency_df, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top Designations",
+x = "Designation",
+y = "Percentage (%)",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+contingency_table <- table(data$Designation, data$Involvement)
+filtered_designations <- rownames(contingency_table[rowSums(contingency_table > 0) == 4, ])
+filtered_data <- subset(data, Designation %in% filtered_designations)
+top_filtered_designations <- as.data.frame(table(filtered_data$Designation))
+colnames(top_filtered_designations) <- c("Designation", "Count")
+contingency_table <- table(data$Designation, data$Involvement)
+filtered_designations <- rownames(contingency_table[rowSums(contingency_table > 0) == 4, ])
+filtered_data <- subset(data, Designation %in% filtered_designations)
+top_filtered_designations <- as.data.frame(table(filtered_data$Designation))
+colnames(top_filtered_designations) <- c("Designation", "Count")
+contingency_table <- table(data$Designation, data$Involvement)
+designations_with_all_involvement <- rownames(contingency_table[rowSums(contingency_table > 0) == 4, ])
+filtered_data <- subset(data, Designation %in% designations_with_all_involvement)
+designation_counts <- as.data.frame(table(filtered_data$Designation))
+colnames(designation_counts) <- c("Designation", "Count")
+designation_counts <- as.data.frame(table(filtered_data$Designation))
+colnames(designation_counts) <- c("Designation", "Freq")
+designation_counts <- as.data.frame(table(filtered_data$Designation))
+colnames(designation_counts) <- c("Designation", "Count")
+print(table(filtered_data$Designation))
+print(table(filtered_data$Designation))
+designation_counts <- as.data.frame(table(filtered_data$Designation))
+print(designation_counts)
+colnames(designation_counts) <- c("Designation", "Count")
+designation_counts <- data.frame(
+Designation = names(table(filtered_data$Designation)),
+Count = as.numeric(table(filtered_data$Designation))
+)
+print(designation_counts)
+top_10_designations <- head(designation_counts[order(-designation_counts$Count), ], 10)$Designation
+top_10_designations <- head(designation_counts[order(-designation_counts$Count), ], 10)
+final_filtered_data <- subset(filtered_data, Designation %in% top_10_designations)
+final_contingency_table <- prop.table(table(final_filtered_data$Designation, final_filtered_data$Involvement), 1) * 100
+final_contingency_df <- as.data.frame(as.table(final_contingency_table))
+colnames(final_contingency_df) <- c("Designation", "Involvement", "Proportion")
+final_contingency_table <- prop.table(table(final_filtered_data$Designation, final_filtered_data$Involvement), 1) * 100
+final_contingency_df <- as.data.frame(as.table(final_contingency_table))
+colnames(final_contingency_df) <- c("Designation", "Involvement")
+ggplot(final_contingency_df, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top 10 Designations with All 4 Types of Involvement",
+x = "Designation",
+y = "Percentage (%)",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+top_designations <- as.data.frame(table(data$Designation))
+colnames(top_designations) <- c("Designation", "Count")
+top_designations <- top_designations[order(-top_designations$Count), ]
+selected_designations <- top_designations$Designation[1:50]
+filtered_data <- subset(data, Designation %in% selected_designations)
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+levels(filtered_contingency_df$Involvement) <- c("Entry level", "Mid-Senior level", "Associate", "Director")
+ggplot(filtered_contingency_df, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top Designations",
+x = "Designation",
+y = "Percentage (%)",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+top_n <- 50
+top_designations <- as.data.frame(table(data$Designation))
+colnames(top_designations) <- c("Designation", "Count")
+top_designations <- top_designations[order(-top_designations$Count), ]
+selected_designations <- top_designations$Designation[1:top_n]
+filtered_data <- subset(data, Designation %in% selected_designations)
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+levels(filtered_contingency_df$Involvement) <- c("Entry level", "Mid-Senior level", "Associate", "Director"
+ggplot(filtered_contingency_df, aes(y = Designation, x = Proportion, fill = Involvement)) +
+top_designations <- as.data.frame(table(data$Designation))
+colnames(top_designations) <- c("Designation", "Count")
+top_designations <- top_designations[order(-top_designations$Count), ]
+selected_designations <- top_designations$Designation[1:top_n]
+filtered_data <- subset(data, Designation %in% selected_designations)
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+levels(filtered_contingency_df$Involvement) <- c("Entry level", "Mid-Senior level", "Associate", "Director")
+ggplot(filtered_contingency_df, aes(y = Designation, x = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top Designations",
+x = "Percentage (%)",
+y = "Designation",
+fill = "Involvement") +
+theme_minimal()
+top_n <- 190
+top_designations <- as.data.frame(table(data$Designation))
+colnames(top_designations) <- c("Designation", "Count")
+top_designations <- top_designations[order(-top_designations$Count), ]
+selected_designations <- top_designations$Designation[1:top_n]
+filtered_data <- subset(data, Designation %in% selected_designations)
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+levels(filtered_contingency_df$Involvement) <- c("Entry level", "Mid-Senior level", "Associate", "Director")
+ggplot(filtered_contingency_df, aes(y = Designation, x = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top Designations",
+x = "Percentage (%)",
+y = "Designation",
+fill = "Involvement") +
+theme_minimal()
+job_level <- "Entry level"
+filtered_data <- subset(data, Level == job_level)
+designation_counts <- as.data.frame(table(filtered_data$Designation))
+colnames(designation_counts) <- c("Designation", "Count")
+top_designations = data['Designation'].value_counts().head(5).index
+reticulate::repl_python()
+quit
+top_designations <- head(sort(table(data$Designation), decreasing = TRUE), 10)
+selected_designations <- names(top_designations)
+filtered_data <- subset(data, Designation %in% selected_designations)
+proportions <- as.data.frame(prop.table(table(filtered_data$Designation, filtered_data$Involvement), margin = 1))
+colnames(proportions) <- c("Designation", "Involvement", "Proportion")
+library(gridExtra)
+install.packages("gridExtra")
+library(gridExtra)
+plots <- lapply(selected_designations, function(designation) {
+current_data <- subset(proportions, Designation == designation)
+ggplot(current_data, aes(x = "", y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", width = 1) +
+coord_polar("y", start = 0) +
+labs(title = paste("Proportions of Involvement for", designation),
+x = NULL, y = NULL, fill = "Involvement") +
+theme_void()
+})
+do.call(grid.arrange, c(plots, ncol = length(plots)))
+top_designations <- head(sort(table(data$Designation), decreasing = TRUE), 10)
+selected_designations <- names(top_designations)
+filtered_data <- subset(data, Designation %in% selected_designations)
+proportions <- as.data.frame(prop.table(table(filtered_data$Designation, filtered_data$Involvement), margin = 1))
+colnames(proportions) <- c("Designation", "Involvement", "Proportion")
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Grouped Bar Chart: Involvement Proportions Across Top Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+top_designations <- head(sort(table(data$Designation), decreasing = TRUE), 50)
+selected_designations <- names(top_designations)
+filtered_data <- subset(data, Designation %in% selected_designations)
+proportions <- as.data.frame(prop.table(table(filtered_data$Designation, filtered_data$Involvement), margin = 1))
+colnames(proportions) <- c("Designation", "Involvement", "Proportion")
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Grouped Bar Chart: Involvement Proportions Across Top Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+library(scales)
+top_designations <- head(sort(table(data$Designation), decreasing = TRUE), 50)
+selected_designations <- names(top_designations)
+filtered_data <- subset(data, Designation %in% selected_designations)
+proportions <- as.data.frame(prop.table(table(filtered_data$Designation, filtered_data$Involvement), margin = 1))
+colnames(proportions) <- c("Designation", "Involvement", "Proportion")
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "dodge") +
+geom_text(aes(label = percent(Proportion)),
+position = position_dodge(width = 0.9),
+vjust = -0.5, size = 3) +
+scale_fill_manual(values = c("Entry level" = "#1f77b4",
+"Mid-Senior level" = "#ff7f0e",
+"Associate" = "#2ca02c",
+"Director" = "#d62728")) +
+labs(title = "Grouped Bar Chart: Involvement Proportions Across Top 10 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+library(ggplot2)
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "dodge") +
+geom_text(aes(label = percent(Proportion)),
+position = position_dodge(width = 0.9),
+vjust = -0.5, size = 3) +
+scale_fill_manual(values = c("Entry level" = "#1f77b4",
+"Mid-Senior level" = "#ff7f0e",
+"Associate" = "#2ca02c",
+"Director" = "#d62728")) +
+labs(title = "Grouped Bar Chart: Involvement Proportions Across Top 10 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "dodge") +
+scale_fill_manual(values = c("Entry level" = "#1f77b4",
+"Mid-Senior level" = "#ff7f0e",
+"Associate" = "#2ca02c",
+"Director" = "#d62728")) +
+labs(title = "Grouped Bar Chart: Involvement Proportions Across Top 10 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+contingency_table <- table(data$Designation, data$Level)
+print(contingency_table)
+chi_square_result <- chisq.test(contingency_table)
+print(chi_square_result)
+install.packages("reshape2")
+library(ggplot2)
+library(reshape2)
+contingency_table <- table(data$Designation, data$Level)
+chi_square_result <- chisq.test(contingency_table)
+observed <- as.data.frame(contingency_table)
+expected <- as.data.frame(chi_square_result$expected)
+observed$Type <- "Observed"
+expected$Type <- "Expected"
+combined <- rbind(observed, expected)
+observed$Type <- "Observed"
+expected$Type <- "Expected"
+colnames(expected) <- colnames(observed)
+head(data,2)
+head(data,2)
+head(data,2)
+top_designations <- as.data.frame(table(data$Designation))
+colnames(top_designations) <- c("Designation", "Count")
+top_designations <- top_designations[order(-top_designations$Count), ]
+selected_designations <- top_designations$Designation[1:10]
+filtered_data <- subset(data, Designation %in% selected_designations)
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+ggplot(filtered_contingency_df, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top 10 Designations",
+x = "Designation",
+y = "Percentage (%)",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+top_designations <- as.data.frame(table(data$Designation))
+colnames(top_designations) <- c("Designation", "Count")
+top_designations <- top_designations[order(-top_designations$Count), ]
+selected_designations <- top_designations$Designation[1:50]
+filtered_data <- subset(data, Designation %in% selected_designations)
+filtered_contingency_table <- prop.table(table(filtered_data$Designation, filtered_data$Involvement), 1) * 100
+filtered_contingency_df <- as.data.frame(as.table(filtered_contingency_table))
+colnames(filtered_contingency_df) <- c("Designation", "Involvement", "Proportion")
+ggplot(filtered_contingency_df, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Proportional Comparison for Top 50 Designations",
+x = "Designation",
+y = "Percentage (%)",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+chisq.test(table_designation)
+git log --pretty=format:'"%h","%ad","%an","%s"' --date=iso-strict > git_log.xlsx
+library(ggplot2)
+library(scales)
+library(gridExtra)
+library(ggplot2)
+library(scales)
+library(gridExtra)
+data <- read.csv("final_data.csv")
+contingency_table <- table(data$Designation, data$Involvement)
+chi_square_result <- chisq.test(contingency_table)
+print(chi_square_result)
+top_designations <- head(sort(table(data$Designation), decreasing = TRUE), 50)
+selected_designations <- names(top_designations)
+filtered_data <- subset(data, Designation %in% selected_designations)
+proportions <- as.data.frame(prop.table(table(filtered_data$Designation, filtered_data$Involvement), margin = 1))
+colnames(proportions) <- c("Designation", "Involvement", "Proportion")
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "dodge") +
+geom_text(aes(label = percent(Proportion)),
+position = position_dodge(width = 0.9),
+vjust = -0.5, size = 3) +
+scale_fill_manual(values = c("Entry level" = "#1f77b4",
+"Mid-Senior level" = "#ff7f0e",
+"Associate" = "#2ca02c",
+"Director" = "#d62728")) +
+labs(title = "Grouped Bar Chart: Involvement Proportions Across Top 10 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+library(ggplot2)
+library(scales)
+library(gridExtra)
+data <- read.csv("final_data.csv")
+contingency_table <- table(data$Designation, data$Involvement)
+chi_square_result <- chisq.test(contingency_table)
+print(chi_square_result)
+top_designations <- head(sort(table(data$Designation), decreasing = TRUE), 50)
+selected_designations <- names(top_designations)
+filtered_data <- subset(data, Designation %in% selected_designations)
+proportions <- as.data.frame(prop.table(table(filtered_data$Designation, filtered_data$Involvement), margin = 1))
+colnames(proportions) <- c("Designation", "Involvement", "Proportion")
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Grouped Bar Chart: Involvement Proportions Across Top 50 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+library(ggplot2)
+library(gridExtra)
+data <- read.csv("final_data.csv")
+contingency_table <- table(data$Designation, data$Involvement)
+chi_square_result <- chisq.test(contingency_table)
+print(chi_square_result)
+top_designations <- head(sort(table(data$Designation), decreasing = TRUE), 50)
+selected_designations <- names(top_designations)
+filtered_data <- subset(data, Designation %in% selected_designations)
+proportions <- as.data.frame(prop.table(table(filtered_data$Designation, filtered_data$Involvement), margin = 1))
+colnames(proportions) <- c("Designation", "Involvement", "Proportion")
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Grouped Bar Chart: Involvement Proportions Across Top 50 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity") +
+labs(title = "Stacked Bar Chart: Involvement Proportions Across Top 50 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity") +
+labs(title = "Stacked Bar Chart: Involvement Proportions Across Top 50 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+library(ggplot2)
+library(gridExtra)
+data <- read.csv("final_data.csv")
+contingency_table <- table(data$Designation, data$Involvement)
+chi_square_result <- chisq.test(contingency_table)
+print(chi_square_result)
+top_designations <- head(sort(table(data$Designation), decreasing = TRUE), 50)
+selected_designations <- names(top_designations)
+filtered_data <- subset(data, Designation %in% selected_designations)
+proportions <- as.data.frame(prop.table(table(filtered_data$Designation, filtered_data$Involvement), margin = 1))
+colnames(proportions) <- c("Designation", "Involvement", "Proportion")
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Grouped Bar Chart: Involvement Proportions Across Top 50 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+ggsave("Stacked_Bar_Chart_Involvement_Proportions_Across_Top_50_Designations.png", width = 1440, height = 545)
+library(ggplot2)
+library(gridExtra)
+data <- read.csv("final_data.csv")
+contingency_table <- table(data$Designation, data$Involvement)
+chi_square_result <- chisq.test(contingency_table)
+print(chi_square_result)
+top_designations <- head(sort(table(data$Designation), decreasing = TRUE), 50)
+selected_designations <- names(top_designations)
+filtered_data <- subset(data, Designation %in% selected_designations)
+proportions <- as.data.frame(prop.table(table(filtered_data$Designation, filtered_data$Involvement), margin = 1))
+colnames(proportions) <- c("Designation", "Involvement", "Proportion")
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Grouped Bar Chart: Involvement Proportions Across Top 50 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+ggsave("Stacked_Bar_Chart_Involvement_Proportions_Across_Top_50_Designations.png", width = 15, height = 5.677)
+library(ggplot2)
+library(gridExtra)
+data <- read.csv("final_data.csv")
+contingency_table <- table(data$Designation, data$Involvement)
+chi_square_result <- chisq.test(contingency_table)
+print(chi_square_result)
+top_designations <- head(sort(table(data$Designation), decreasing = TRUE), 50)
+selected_designations <- names(top_designations)
+filtered_data <- subset(data, Designation %in% selected_designations)
+proportions <- as.data.frame(prop.table(table(filtered_data$Designation, filtered_data$Involvement), margin = 1))
+colnames(proportions) <- c("Designation", "Involvement", "Proportion")
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Grouped Bar Chart: Involvement Proportions Across Top 50 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+ggsave("Stacked_Bar_Chart_Involvement_Proportions_Across_Top_50_Designations.png", width = 15, height = 5.677, bg = "white")
+ggplot(proportions, aes(x = Designation, y = Proportion, fill = Involvement)) +
+geom_bar(stat = "identity") +
+labs(title = "Stacked Bar Chart: Involvement Proportions Across Top 50 Designations",
+x = "Designation",
+y = "Proportion",
+fill = "Involvement") +
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+ggsave("Stacked_Bar_Chart_Involvement_Proportions_Across_Top_50_Designations.png", width = 15, height = 5.677, bg = "white")
