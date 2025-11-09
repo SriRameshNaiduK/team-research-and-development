@@ -1,6 +1,6 @@
 ## 📘 Project Overview  
 This project explores how **involvement types** (Entry Level, Mid-Senior, Associate, Director) differ across **job designations** in LinkedIn tech job postings.  
-By applying **data analysis and hypothesis testing**, it uncovers workforce dynamics and career progression patterns within the tech industry.  
+By applying **data analysis and hypothesis testing**, it uncovers workforce dynamics and career progression patterns within the tech industry.
 
 ---
 
