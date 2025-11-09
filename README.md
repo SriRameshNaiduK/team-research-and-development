@@ -42,7 +42,7 @@ By applying **data analysis and hypothesis testing**, it uncovers workforce dyna
 
 | Name | Role | Contribution |
 |------|------|--------------|
-| **Sri Ramesh Naidu Kusu** | Data preprocessing, analysis, hypothesis testing, final report | ✅ |
+| **Sri Ramesh Naidu Kusu** | Data preprocessing, analysis, hypothesis testing(Chi-Square Test), final report | ✅ |
 | **Faisal Iqbal** | Literature review, references, visualization review | ✅ |
 | **Afrid Shaik** | Chart creation and analysis (Top designations) | ✅ |
 | **Asif Nasim** | Grouped bar visualization & data analysis support | ✅ |
